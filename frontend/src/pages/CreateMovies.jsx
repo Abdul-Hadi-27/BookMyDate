@@ -28,7 +28,7 @@ const CreateMovies = () => {
     (state) => state.movieReducer.movies
   );
 
-  console.log(movie);
+  // console.log(movie);
 
   const submitHandler = async (data) => {
     try {

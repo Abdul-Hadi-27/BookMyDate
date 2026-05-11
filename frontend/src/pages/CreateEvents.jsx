@@ -28,7 +28,7 @@ const CreateEvents = () => {
     (state) => state.movieReducer.movies
   );
 
-  console.log(event);
+  // console.log(event);
 
   const submitHandler = async (data) => {
     try {
