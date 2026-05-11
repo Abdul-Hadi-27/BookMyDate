@@ -3,7 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import UserSlice from "./reducers/UserSlice";
 import MovieSlice from "./reducers/MovieSlice";
 import UiSlice from "./reducers/Ui.slice";
-import ShowSlice from "./reducers/Showslice";
+import ShowSlice from "./reducers/ShowSlice";
 import BookingSlice from "./reducers/BookingSlice";
 
 export const store = configureStore({
