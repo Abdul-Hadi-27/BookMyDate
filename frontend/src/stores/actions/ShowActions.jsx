@@ -10,7 +10,7 @@ export const asyncCreateShows = (formData) => async (dispatch) => {
         "Content-Type": "multipart/form-data",
       },
     });
-    console.log(data.show);
+    // console.log(data.show);
     // dispatch(addShow(data.show)); // backend "show" bhej raha hai
 
     return { success: true };
@@ -23,7 +23,7 @@ export const asyncCreateShows = (formData) => async (dispatch) => {
 export const getShowDetails = (id) => async (dispatch) => {
   try {
     const { data } = await api.get(`/api/auth/shows/${id}`);
-    console.log(data.shows);
+    // console.log(data.shows);
 
     dispatch(setShows(data?.shows));
   } catch (error) {
@@ -39,7 +39,7 @@ export const getShowById =
         `/api/auth/shows/single/${id}`
       );
 
-      console.log(data?.show);
+      // console.log(data?.show);
 
       dispatch(
         setSelectedShows(data?.show)

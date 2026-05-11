@@ -19,7 +19,7 @@ const RenderShows = () => {
 
   // SHOWS
   const shows = useSelector((state) => state.showReducer.shows);
-  console.log(shows);
+  // console.log(shows);
 
   // MOVIE
   const movieById = useSelector((state) => state.movieReducer.selectedMovie);

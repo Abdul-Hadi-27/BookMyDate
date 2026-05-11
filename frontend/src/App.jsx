@@ -23,7 +23,7 @@ const App = () => {
     useDispatch();
 
     const user=useSelector((state)=>state.userReducer.users)
-    console.log(user)
+    // console.log(user)
 
   const isAuthOpen =
     useSelector(
