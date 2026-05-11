@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:3000/api/auth", // 🔁 apne backend ka URL daal
+  baseURL: "https://bookmydate-q93v.onrender.com/", // 🔁 apne backend ka URL daal
   withCredentials: true, // 🔥 cookies ke liye IMPORTANT
   headers: {
     "Content-Type": "application/json",
