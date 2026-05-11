@@ -5,7 +5,7 @@ import { setSelectedShows, setShows } from "../reducers/ShowSlice";
 
 export const asyncCreateShows = (formData) => async (dispatch) => {
   try {
-    const { data } = await api.post("/shows", formData, {
+    const { data } = await api.post("/api/auth/shows", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -22,7 +22,7 @@ export const asyncCreateShows = (formData) => async (dispatch) => {
 
 export const getShowDetails = (id) => async (dispatch) => {
   try {
-    const { data } = await api.get(`/shows/${id}`);
+    const { data } = await api.get(`/api/auth/shows/${id}`);
     console.log(data.shows);
 
     dispatch(setShows(data?.shows));
@@ -36,7 +36,7 @@ export const getShowById =
   (id) => async (dispatch) => {
     try {
       const { data } = await api.get(
-        `/shows/single/${id}`
+        `/api/auth/shows/single/${id}`
       );
 
       console.log(data?.show);

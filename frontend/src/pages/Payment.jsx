@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-import axios from "axios";
 
 import { useSelector } from "react-redux";
+import api from "../api/axiosConfig";
 
 const Payment = () => {
   const [payments, setPayments] =
@@ -20,8 +20,8 @@ const Payment = () => {
     async () => {
       try {
         const { data } =
-          await axios.get(
-            `http://localhost:3000/api/auth/payments/${user?.id}`
+          await api.get(
+            `/api/auth/payments/${user?.id}`
           );
 
         setPayments(data);

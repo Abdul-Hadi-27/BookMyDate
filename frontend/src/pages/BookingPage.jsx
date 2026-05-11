@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/*/ eslint-disable no-unused-vars */
 
 import { useEffect, useState } from "react";
 
@@ -16,9 +16,10 @@ import {
   getShowById,
 } from "../stores/actions/ShowActions";
 
-import axios from "axios";
+
 
 import { toast } from "react-toastify";
+import api from "../api/axiosConfig";
 
 const BookingPage = () => {
 
@@ -141,8 +142,8 @@ const BookingPage = () => {
 
         // create order
         const response =
-          await axios.post(
-            "http://localhost:3000/api/auth/create-order",
+          await api.post(
+            "/api/auth/create-order",
             {
               showId: id,
 
@@ -186,8 +187,8 @@ const BookingPage = () => {
               try {
 
                 const verifyResponse =
-                  await axios.post(
-                    "http://localhost:3000/api/auth/verify-payment",
+                  await api.post(
+                    "/api/auth/verify-payment",
                     {
                       razorpay_order_id:
                         response.razorpay_order_id,

@@ -18,7 +18,7 @@ export const getcurrentUser =
   () => async (dispatch) => {
     try {
       const { data } =
-        await api.get("/me");
+        await api.get("/api/auth/me");
 
       dispatch(
         setUser(data?.user)
@@ -39,7 +39,7 @@ export const asyncSendOtp =
 
       const { data } =
         await api.post(
-          "/send-otp",
+          "/api/auth/send-otp",
           { email }
         );
 
@@ -79,7 +79,7 @@ export const asyncVerifyOtp =
 
       const { data } =
         await api.post(
-          "/verify-otp",
+          "/api/auth/verify-otp",
           formData,
           {
             headers: {
@@ -129,7 +129,7 @@ export const asyncloginUser =
 
       const { data } =
         await api.post(
-          "/login",
+          "/api/auth/login",
           formData
         );
 
@@ -173,7 +173,7 @@ export const asyncLoginAdmin =
 
       const { data } =
         await api.post(
-          "/admin/login",
+          "/api/auth/admin/login",
           formData
         );
 
@@ -215,7 +215,7 @@ export const asynclogoutUser =
     try {
 
       await api.post(
-        "/logout",
+        "/api/auth/logout",
         {},
         {
           withCredentials: true,
@@ -251,7 +251,7 @@ export const asyncUpdateUser =
     try {
 
       await api.patch(
-        "/update",
+        "/api/auth/update",
         formData,
         {
           headers: {

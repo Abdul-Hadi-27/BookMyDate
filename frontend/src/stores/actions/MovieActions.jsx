@@ -5,11 +5,11 @@ import { setMovies, setSelectedMovie } from "../reducers/MovieSlice";
 
 export const asyncgetMovies = (category) => async (dispatch) => {
   try {
-    let url = "/movies";
+    let url = "/api/auth/movies";
 
     // agar category aayi hai → query add kar
     if (category) {
-      url = `/movies?category=${category}`;
+      url = `/api/auth/movies?category=${category}`;
     }
 
     const { data } = await api.get(url);
@@ -22,7 +22,7 @@ export const asyncgetMovies = (category) => async (dispatch) => {
 
 export const getMoviesbyId = (id) => async (dispatch) => {
   try {
-    const { data } = await api.get(`/movies/${id}`);
+    const { data } = await api.get(`/api/auth/movies/${id}`);
  dispatch(setSelectedMovie(data?.movie));
 
   } catch (error) {
@@ -32,7 +32,7 @@ export const getMoviesbyId = (id) => async (dispatch) => {
 
 export const asynccreateMovies = (formData) => async (dispatch) => {
   try {
-     await api.post("/add-movie", formData,{
+     await api.post("/api/auth/add-movie", formData,{
     
       headers: {
         "Content-Type": "multipart/form-data",

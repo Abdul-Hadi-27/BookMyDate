@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 
-import axios from "axios";
 
 import { useSelector } from "react-redux";
+import api from "../api/axiosConfig";
 
 const MyBookings = () => {
   const [bookings, setBookings] =
@@ -20,10 +20,9 @@ const MyBookings = () => {
   const fetchBookings =
     async () => {
       try {
-        const { data } =
-          await axios.get(
-            `http://localhost:3000/api/auth/my-bookings/${user?.id}`
-          );
+       const { data } = await api.get(
+  `/api/auth/my-bookings/${user?.id}`
+);
 
         setBookings(data);
       } catch (error) {

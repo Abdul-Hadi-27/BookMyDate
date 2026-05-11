@@ -17,7 +17,7 @@ export const asyncCreateBooking =
       dispatch(setLoading(true));
 
       const { data } = await api.post(
-        "/shows/booking",
+        "/api/auth/shows/booking",
         bookingData,
         {
           withCredentials: true,
