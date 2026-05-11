@@ -2,8 +2,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://bookmydate-q93v.onrender.com/", // 🔁 apne backend ka URL daal
-  withCredentials: true, // 🔥 cookies ke liye IMPORTANT
+  baseURL: import.meta.env.VITE_API_URL,
+  withCredentials: true,
   headers: {
     "Content-Type": "application/json",
   },
